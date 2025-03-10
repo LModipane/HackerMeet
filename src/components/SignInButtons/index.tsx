@@ -1,14 +1,14 @@
-"use client"
+'use client';
 
-import React from 'react'
+import React from 'react';
 import { Button } from '../ui/button';
 
 const SignInButton = () => {
-  return (
+	return (
 		<Button className="bg-white" variant="default" size={'lg'}>
-			Sign
+			Sign In
 		</Button>
 	);
-}
+};
 
-export default SignInButton
+export default SignInButton;
