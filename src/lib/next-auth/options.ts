@@ -11,4 +11,21 @@ export const authOptions: AuthOptions = {
 	session: {
 		strategy: 'jwt',
 	},
+	callbacks: {
+		async signIn({ user }) {
+			console.log(user);
+
+			return true;
+		},
+		async session({ session }) {
+			return session;
+		},
+		async jwt({ token, user }) {
+			if (user) {
+				token.id = user.id;
+			}
+			return token;
+		},
+	},
+	
 };

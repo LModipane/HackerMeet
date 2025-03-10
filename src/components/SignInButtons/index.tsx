@@ -6,9 +6,11 @@ import { signIn } from 'next-auth/react';
 
 const SignInButton = () => {
 	return (
-		<Button className="bg-white" variant="default" size={'lg'} onClick={() => signIn('google')}>
-			Sign In
-		</Button>
+		<div className="flex flex-col gap-y-5">
+			<Button className="bg-white" variant="default" size={'lg'} onClick={() => signIn('google')}>
+				Sign In
+			</Button>
+		</div>
 	);
 };
 
