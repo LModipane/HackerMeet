@@ -31,7 +31,7 @@ export default async function ProfileFeedPage() {
 	];
 	return (
 		<main className="flex h-full w-full ">
-			<div className="bg-teal-600 h-full w-[300px]">Dashboard</div>
+			<div className="bg-teal-600 h-full w-[300px] .hide-on-mobile">Dashboard</div>
 			<div className="h-full flex-1">
 				<TinderCards initialProfiles={profiles} />
 			</div>
