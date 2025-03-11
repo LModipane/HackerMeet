@@ -1,9 +1,10 @@
 'use client';
 
-import { Profile } from '@/@types';
 import Image from 'next/image';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { Profile } from '@/@types';
+import { Download } from 'lucide-react';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 type Props = {
 	initialProfiles: Profile[];
@@ -53,7 +54,7 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 		<motion.div
 			drag={isFirst ? 'x' : false}
 			onDragEnd={handleDragEnd}
-			className="relative sm:w-[40%] w-[95%]  h-[90%] rounded-lg"
+			className="relative sm:w-[40%] w-[95%]  h-[90%] rounded-lg text-white"
 			dragConstraints={{ left: 0, right: 0 }}
 			animate={{
 				scale: isFirst ? 1 : 0.95,
@@ -76,7 +77,23 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 				alt="placeholder"
 				src={profile.img}
 				draggable={false}
+				priority
 			/>
+			<div className="absolute z-20 right-[30px] bottom-[115px] ">
+				<Download className="h-8 w-8 " />
+			</div>
+			<div className="absolute p-2 bg-gray-500/50 z-10 bottom-0 left-0 right-0 h-40 rounded-lg">
+				<div className="flex flex-col gap-y-2 p-1">
+					<h1 className="capitalize text-xl font-bold">{profile.name}</h1>
+					{profile.elivatorPitch ? (
+						<div className="w-[300px] overflow-hidden border border-gray-400 p-2 rounded-md">
+							<p className="animate-slide whitespace-nowrap text-lg font-bold">
+								{profile.elivatorPitch}
+							</p>
+						</div>
+					) : null}
+				</div>
+			</div>
 		</motion.div>
 	);
 };

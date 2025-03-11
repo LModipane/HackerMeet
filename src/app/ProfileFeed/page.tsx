@@ -28,6 +28,18 @@ export default async function ProfileFeedPage() {
 			name: 'Tshepeng',
 			img: 'https://images.unsplash.com/photo-1685674594424-88febb74cfc7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
 		},
+		{
+			id: '5',
+			name: 'tshiamo',
+			img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D',
+			elivatorPitch: `Hi, I’m Lesedi Shaun Modipane, a passionate software developer with a strong background in building scalable web applications. I specialize in JavaScript, TypeScript, and Next.js,
+					crafting high-performance solutions that enhance user experiences. Whether it's developing
+					real-time features, optimizing APIs, or improving front-end responsiveness, I thrive on
+					solving complex problems through clean, efficient code. Recently, I built 'Family
+					Football,' a social prediction platform that brings people together through sports. I love
+					collaborating with teams to create impactful software that scales. If you're looking for a
+					developer who’s adaptable, innovative, and always eager to learn, let’s connect! 🚀`,
+		},
 	];
 
 	return (
