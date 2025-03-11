@@ -79,6 +79,7 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 				src={profile.img}
 				draggable={false}
 				priority
+				quality={isFirst ? 75 : 20}
 			/>
 			<div className="absolute z-20 right-[30px] bottom-[115px] ">
 				<Download className="h-8 w-8 " />
