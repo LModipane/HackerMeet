@@ -53,6 +53,8 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 	return (
 		<motion.div
 			drag={isFirst ? 'x' : false}
+			dragElastic={0.2} // Reduced elasticity for a firmer drag feel
+			dragMomentum={false} // No inertia, so the element stops immediately when you stop dragging
 			onDragEnd={handleDragEnd}
 			className="relative sm:w-[40%] w-[95%]  h-[90%] rounded-lg text-white"
 			dragConstraints={{ left: 0, right: 0 }}
@@ -80,6 +82,7 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 				draggable={false}
 				priority
 				quality={isFirst ? 75 : 20}
+				placeholder="empty"
 			/>
 			<div className="absolute z-20 right-[30px] bottom-[115px] ">
 				<Download className="h-8 w-8 " />
