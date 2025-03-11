@@ -53,7 +53,7 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 		<motion.div
 			drag={isFirst ? 'x' : false}
 			onDragEnd={handleDragEnd}
-			className="relative w-[40%] h-[90%] rounded-lg"
+			className="relative sm:w-[40%] w-[95%]  h-[90%] rounded-lg"
 			dragConstraints={{ left: 0, right: 0 }}
 			animate={{
 				scale: isFirst ? 1 : 0.95,
@@ -65,7 +65,6 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 				opacity,
 				rotate,
 				x,
-
 				transition: '0.125s transform',
 				boxShadow: isFirst
 					? '0px 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 /0.5)'
