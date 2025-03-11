@@ -1,4 +1,5 @@
 import { TinderCards } from '@/components';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { authOptions } from '@/lib/next-auth/options';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
@@ -6,7 +7,7 @@ import { redirect } from 'next/navigation';
 export default async function ProfileFeedPage() {
 	const clientSession = await getServerSession(authOptions);
 	if (!clientSession || !clientSession.user) return redirect('/');
-
+	console.log(clientSession);
 	const profiles = [
 		{
 			id: '1',
@@ -44,7 +45,24 @@ export default async function ProfileFeedPage() {
 
 	return (
 		<main className="flex h-full w-full ">
-			<div className="bg-teal-600 h-full w-[300px] hide-on-mobile">Dashboard</div>
+			<div className="h-full w-[300px] hide-on-mobile bg-lime-700 border-gray-300 border-r-[3px] flex flex-col justify-between rounded-r-xl">
+				<div className="bg-gray-300 flex justify-between h-10 p-2 rounded-tr-xl">
+					<div className="">Teams</div>
+					<div className="">Create Team</div>
+				</div>
+				<div className="">body</div>
+				<div className="bg-gray-300 h-20 p-2 flex items-center justify-center">
+					<div className="flex gap-x-3">
+						<Avatar>
+							<AvatarImage src={clientSession?.user?.image ?? ''} alt="profile-avater" />
+							<AvatarFallback>BB</AvatarFallback>
+						</Avatar>
+						<div className="">
+							<h2>{clientSession?.user?.name ?? 'NA'}</h2>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div className="h-full flex-1 mb-4">
 				<TinderCards initialProfiles={profiles} />
 			</div>
