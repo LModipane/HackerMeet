@@ -31,7 +31,7 @@ export default async function RootLayout({
 		<AuthProvider session={session}>
 			<html lang="en">
 				<body
-					className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen bg-gradient-to-b from-lime-500 to-blue-300 via-lime-400`}>
+					className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen bg-gradient-to-b from-lime-500 to-blue-300 via-lime-400 overflow-hidden`}>
 					{children}
 				</body>
 			</html>
