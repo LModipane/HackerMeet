@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 
 export default async function ProfileFeedPage() {
 	const clientSession = await getServerSession(authOptions);
-	if (clientSession && clientSession.user) return redirect('/');
+	if (!clientSession || !clientSession.user) return redirect('/');
 
 	const profiles = [
 		{
