@@ -29,10 +29,11 @@ export default async function ProfileFeedPage() {
 			img: 'https://images.unsplash.com/photo-1685674594424-88febb74cfc7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
 		},
 	];
+
 	return (
 		<main className="flex h-full w-full ">
-			<div className="bg-teal-600 h-full w-[300px] .hide-on-mobile">Dashboard</div>
-			<div className="h-full flex-1">
+			<div className="bg-teal-600 h-full w-[300px] hide-on-mobile">Dashboard</div>
+			<div className="h-full flex-1 mb-4">
 				<TinderCards initialProfiles={profiles} />
 			</div>
 		</main>

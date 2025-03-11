@@ -13,8 +13,6 @@ export const authOptions: AuthOptions = {
 	},
 	callbacks: {
 		async signIn({ user }) {
-			console.log(user);
-
 			return true;
 		},
 		async session({ session }) {
@@ -27,5 +25,4 @@ export const authOptions: AuthOptions = {
 			return token;
 		},
 	},
-	
 };
