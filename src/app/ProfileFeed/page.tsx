@@ -1,6 +1,12 @@
 import { TinderCards } from '@/components';
+import { authOptions } from '@/lib/next-auth/options';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
-export default function ProfileFeedPage() {
+export default async function ProfileFeedPage() {
+	const clientSession = await getServerSession(authOptions);
+	if (clientSession && clientSession.user) return redirect('/');
+
 	const profiles = [
 		{
 			id: '1',
