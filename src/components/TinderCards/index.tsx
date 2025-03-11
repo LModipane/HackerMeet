@@ -66,6 +66,7 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 				opacity,
 				rotate,
 				x,
+				willChange: 'transform, opacity', //this property is to optimise changes in transform and opacity
 				transition: '0.125s transform',
 				boxShadow: isFirst
 					? '0px 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 /0.5)'
