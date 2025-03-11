@@ -48,15 +48,13 @@ const Card = ({ profile, profiles, setProfiles, cardIndex }: CardProp) => {
 	});
 
 	const handleDragEnd = () => {
-		if (Math.abs(x.get()) > 50) setProfiles(prev => prev.filter(p => p.id !== profile.id));
+		if (Math.abs(x.get()) > 25) setProfiles(prev => prev.filter(p => p.id !== profile.id));
 	};
 	return (
 		<motion.div
 			drag={isFirst ? 'x' : false}
-			dragElastic={0.2} // Reduced elasticity for a firmer drag feel
-			dragMomentum={false} // No inertia, so the element stops immediately when you stop dragging
 			onDragEnd={handleDragEnd}
-			className="relative sm:w-[40%] w-[95%]  h-[90%] rounded-lg text-white"
+			className="relative sm:w-[40%] w-[95%] h-[90%] rounded-lg text-white"
 			dragConstraints={{ left: 0, right: 0 }}
 			animate={{
 				scale: isFirst ? 1 : 0.95,
